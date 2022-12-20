@@ -1,6 +1,6 @@
-site_title = "MyArxiv"
+site_title = "ReadPaper"
 limit_days = 7
-cache_url = "https://vpromise.github.io/MyArxiv/cache.json"
+cache_url = "https://vpromise.github.io/readpaper/cache.json"
 
 [[sources]]
 limit = 150
