@@ -1,5 +1,5 @@
 site_title = "ReadPaper"
-limit_days = 14
+limit_days = 7
 cache_url = "https://vpromise.github.io/readpaper/cache.json"
 
 [[sources]]
