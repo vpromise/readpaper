@@ -84,6 +84,51 @@
             <article>
                 <details>
                     <Summary>
+                        {{ subject }} <span class="chip" style="font-size: 60%">{{len papers}}</span>
+                    </Summary>
+                    <div class="details-content">
+                        {{#each papers}}
+                            <article>
+                                <details class="article-expander">
+                                    <summary class="article-expander-title">
+                                        {{#if (ne updated published)}}♻{{/if}} {{highlight_title title authors}} {{highlight_conference comment}}
+                                    </summary>
+                                    <div class="article-authors">
+                                        <a href="{{id}}">
+                                            <i class="ri-links-line"></i>
+                                        </a>
+                                        <a href="{{pdf_url}}">
+                                            <i class="ri-file-paper-2-line"></i>
+                                        </a>
+                                        {{highlight_author authors}}
+                                    </div>
+                                    <div class="article-summary-box-inner">
+                                        <span>{{summary}}</span>
+                                    </div>
+                                    {{#if comment}}
+                                        <div class="article-summary-box-inner">
+                                            <span class="chip">comment</span>: <span>{{comment}}</span>
+                                        </div>
+                                    {{/if}}
+                                </details>
+                            </article>
+                        {{/each}}
+                    </div>
+                </details>
+            </article>
+        {{/each}}
+    </section>
+{{/each}}
+
+{{!-- {{#each days}}
+    <section class="day-container">
+        <div class="date">
+            <time datetime="{{datetime}}">{{time_format datetime "%F"}}</time>
+        </div>
+        {{#each subjects}}
+            <article>
+                <details>
+                    <Summary>
                         {{ subject }}
                     </Summary>
                     <div class="details-content">
@@ -120,9 +165,9 @@
     </section>
 {{/each}}
 
-</body>
+</body> --}}
 
-<footer>
+{{!-- <footer>
     <div>
         <time id="build-timestamp" datetime="{{build_time}}">
             <a href="https://github.com/vpromise/readpaper/">
@@ -131,7 +176,22 @@
                     build_time "%F %T %Z"}}&style=for-the-badge"
                 alt="{{time_format build_time "%F %T %Z"}}">
             </a>
-            {{!-- {{time_format build_time "%F %T %Z"}} --}}
+        </time>
+    </div>
+</footer>
+<script src="index.js"></script>
+</html> --}}
+
+<footer>
+    <div>
+        <time id="build-timestamp" datetime="{{build_time}}">
+            {{!-- <a href="https://github.com/MLNLP-World/MyArxiv/actions">
+                <img id="build-timestamp-badge"
+                     src="https://img.shields.io/github/workflow/status/mlnlp-world/myarxiv/Update?label={{time_format
+                    build_time "%F %T %Z"}}&style=for-the-badge"
+                alt="{{time_format build_time "%F %T %Z"}}">
+            </a> --}}
+            {{time_format build_time "%F %T %Z"}}
         </time>
     </div>
 </footer>
